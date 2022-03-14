@@ -4,13 +4,16 @@ using namespace std;
 #include <string>
 #include <vector>
 #include "mat.hpp"
+
 namespace ariel{
+	char low = '!';
+	char high = '~';
 	string mat(int x, int y, char z,char w){
 		if((x % 2 == 0) || (y % 2 == 0)){
 			throw std::invalid_argument( "Mat size is always odd" );
 			return "";
 		}
-		if(((33 > z) || (z > 126)) || ((33 > w) || (w > 126))){
+		if(((low > z) || (z > high)) || ((low > w) || (w > high))){
 			throw std::invalid_argument("symboll illeagal");
 			return "";
 		}
